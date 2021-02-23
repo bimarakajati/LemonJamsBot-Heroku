@@ -1,7 +1,7 @@
 import { Composer } from 'telegraf';
 import { skip } from '../tgcalls';
 
-export const skipHandler = Composer.command('next', ctx => {
+export const skipHandler = Composer.command('skip', ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
