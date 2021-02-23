@@ -5,7 +5,7 @@ export const playHandler = Composer.command('play', async ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
-        await ctx.reply('I can only play in groups.');
+        await ctx.reply('Saya hanya bisa bermain di dalam grup.');
         return;
     }
 
@@ -13,11 +13,11 @@ export const playHandler = Composer.command('play', async ctx => {
     const text = ctx.message.text.slice(commandEntity.length + 1);
 
     if (!text) {
-        await ctx.reply('You need to specify a YouTube URL.');
+        await ctx.reply('URL YouTubenya cek lagi bos!.');
         return;
     }
 
     const index = await addToQueue(chat, text);
 
-    await ctx.reply(index === 0 ? 'Playing.' : `Queued at position ${index}.`);
+    await ctx.reply(index === 0 ? 'Sedang diputar...' : `Mengantri di posisi ${index}.`);
 });

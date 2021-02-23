@@ -1,7 +1,7 @@
 import { Composer } from 'telegraf';
 import { skip } from '../tgcalls';
 
-export const skipHandler = Composer.command('skip', ctx => {
+export const skipHandler = Composer.command('next', ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
@@ -9,5 +9,5 @@ export const skipHandler = Composer.command('skip', ctx => {
     }
 
     const skipped = skip(chat.id);
-    ctx.reply(skipped ? 'Skipped.' : "There's no song playing.");
+    ctx.reply(skipped ? 'Ganti-ganti lagunya jelek.' : "Nge-skip apaan bos? antrian kosong...");
 });
