@@ -9,7 +9,7 @@ export const pauseHandler = Composer.command(['pause', 'resume'], async ctx => {
     }
 
     const paused = await pause(chat.id);
-    const message = paused === null ? "Nge-pause apaan bos? gada lagu yg diputer..." : paused ? 'Dijeda.' : 'Dilanjutkan.';
+    const message = paused === null ? "Nge-pause apaan bos? gada lagu yg diputer..." : paused ? 'Dilanjutkan.' : 'Dijeda.';
 
     await ctx.reply(message);
 });
